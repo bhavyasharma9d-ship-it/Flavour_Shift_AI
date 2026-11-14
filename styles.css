@@ -1,0 +1,318 @@
+/* ========================================================
+   FlavorShift AI - Premium Minimalist Food-Tech Design System
+   Palette: Warm Ivory, Sage Green, Deep Forest Green, 
+            Terracotta, Soft Peach, Warm Beige, Dark Espresso
+   Typography: Playfair Display, DM Sans, Cormorant Garamond
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+
+:root {
+  /* Food-Tech Color System */
+  --color-ivory: #FAF7F0;
+  --color-sage: #879B76;
+  --color-sage-light: #E7EDE3;
+  --color-sage-dark: #6D815D;
+  --color-forest: #263D32;
+  --color-forest-dark: #1C2E25;
+  --color-terracotta: #C87957;
+  --color-terracotta-dark: #B5623E;
+  --color-peach: #F2D5C4;
+  --color-peach-light: #FDF8F5;
+  --color-beige: #E9DFC9;
+  --color-beige-light: #F6F1E7;
+  --color-espresso: #302820;
+
+  /* Theme Canvas */
+  --bg-primary: #FAF7F0;
+  --bg-secondary: #F5EFE3;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+  --border-color: rgba(48, 40, 32, 0.08);
+  --border-focus: #C87957;
+
+  /* Typography */
+  --text-primary: #263D32;
+  --text-secondary: #546546;
+  --text-muted: #7E786D;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Clean, Subtle Shadows */
+  --shadow-sm: 0 1px 2px rgba(48, 40, 32, 0.04);
+  --shadow-md: 0 4px 12px rgba(48, 40, 32, 0.06);
+  --shadow-lg: 0 8px 24px rgba(48, 40, 32, 0.08);
+  --glass-bg: rgba(250, 247, 240, 0.92);
+  --glass-border: rgba(233, 223, 201, 0.6);
+}
+
+/* Midnight Gourmet Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #181410;
+  --bg-secondary: #201A15;
+  --bg-card: #1F1A16;
+  --bg-card-hover: #26201B;
+  --border-color: rgba(245, 239, 227, 0.08);
+  --border-focus: #C87957;
+
+  --text-primary: #FAF7F0;
+  --text-secondary: #D4CBBA;
+  --text-muted: #968D7F;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --glass-bg: rgba(24, 20, 16, 0.92);
+  --glass-border: rgba(245, 239, 227, 0.08);
+}
+
+/* Global Reset & Base */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.015em;
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* ========================================================
+   CARDS & CONTAINERS (CLEAN & MINIMALIST)
+   ======================================================== */
+.cafe-card, .editorial-card, .glow-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.cafe-card:hover, .editorial-card:hover, .glow-card:hover {
+  border-color: rgba(200, 121, 87, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.glow-card::before {
+  display: none !important;
+}
+
+.glass-nav {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ========================================================
+   INTERACTIVE BUTTONS & BADGES
+   ======================================================== */
+.forest-btn {
+  background-color: var(--color-forest);
+  color: #FAF7F0;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.forest-btn:hover {
+  background-color: var(--color-forest-dark);
+  opacity: 0.95;
+}
+
+.terracotta-btn {
+  background-color: var(--color-terracotta);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.terracotta-btn:hover {
+  background-color: var(--color-terracotta-dark);
+  opacity: 0.95;
+}
+
+.sage-btn {
+  background-color: var(--color-sage-light);
+  color: var(--color-forest);
+  border: 1px solid rgba(135, 155, 118, 0.3);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.sage-btn:hover {
+  background-color: var(--color-sage);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .sage-btn {
+  background-color: rgba(135, 155, 118, 0.15);
+  color: #FAF7F0;
+  border-color: rgba(135, 155, 118, 0.25);
+}
+
+/* ========================================================
+   NAVIGATION & ACTIVE STATES
+   ======================================================== */
+.nav-tab-btn {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-btn:hover {
+  color: var(--color-terracotta) !important;
+}
+
+.active-nav-tab {
+  color: var(--color-forest) !important;
+  font-weight: 700 !important;
+  background-color: rgba(38, 61, 50, 0.08) !important;
+}
+
+[data-theme="dark"] .active-nav-tab {
+  color: #FAF7F0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Active Category & Diet Filters */
+.active-cat {
+  background-color: var(--color-forest) !important;
+  color: #FAF7F0 !important;
+  border-color: transparent !important;
+}
+
+.active-diet {
+  background-color: var(--color-terracotta) !important;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+}
+
+/* ========================================================
+   SUBTLE MICRO-INTERACTIONS & UTILITIES
+   ======================================================== */
+.food-img-hover {
+  overflow: hidden;
+  border-radius: 0.875rem;
+}
+
+.food-img-hover img {
+  transition: transform 0.4s ease;
+}
+
+.food-img-hover:hover img {
+  transform: scale(1.03);
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: slideUpFade 0.25s ease-out forwards;
+}
+
+/* Custom Slim Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(135, 155, 118, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}
+
+/* Modal Styling */
+#recipe-webx-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Dashboard KPI Card */
+.dash-kpi-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dash-kpi-card:hover {
+  border-color: rgba(200, 121, 87, 0.35);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Print Layout for Kitchen Prep Ticket */
+@media print {
+  body > *:not(#kot-print-area) {
+    display: none !important;
+  }
+  #kot-print-area {
+    display: block !important;
+    position: static;
+    width: 100%;
+    color: #000 !important;
+    background: #fff !important;
+  }
+}
+
+/* Foodoscope Live Shimmer Skeleton */
+@keyframes foodoscopeShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(233, 223, 201, 0.3) 25%, rgba(255, 255, 255, 0.7) 50%, rgba(233, 223, 201, 0.3) 75%);
+  background-size: 200% 100%;
+  animation: foodoscopeShimmer 1.6s infinite ease-in-out;
+}
+
+[data-theme="dark"] .skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(40, 32, 26, 0.5) 25%, rgba(60, 48, 40, 0.8) 50%, rgba(40, 32, 26, 0.5) 75%);
+  background-size: 200% 100%;
+  animation: foodoscopeShimmer 1.6s infinite ease-in-out;
+}
