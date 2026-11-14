@@ -23,6 +23,7 @@ class Settings(BaseSettings):
         env_prefix="FLAVORSHIFT_",
         env_file_encoding="utf-8",
         case_sensitive=False,
+        extra="ignore",
     )
 
     # ── Application ──────────────────────────────────────────────────────
@@ -49,8 +50,8 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379/0"
 
     # ── Foodoscope / FlavorDB API ────────────────────────────────────────
-    FOODOSCOPE_API_KEY: str = "XSHWtIa1UXATvKvsrWpZtgtPDWo6IaOsVKgBGSRPsdxewtur"
-    FOODOSCOPE_BASE_URL: str = "https://api.foodoscope.com"
+    FOODOSCOPE_API_KEY: str = "O3MVxj9stHg97e4nPBt2pICNFpumlyNrBv0BfqGkUVJsSgJy"
+    FOODOSCOPE_BASE_URL: str = "http://cosylab.iiitd.edu.in:6969"
 
     # ── AI Model Artefact Paths ──────────────────────────────────────────
     FLAVORGRAPH_VECTORS_PATH: str = "data/flavorgraph_vectors/embeddings.npy"

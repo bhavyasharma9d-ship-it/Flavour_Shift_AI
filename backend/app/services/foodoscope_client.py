@@ -87,7 +87,7 @@ class FoodoscopeClient:
         """Check Foodoscope platform health endpoint."""
         url = f"{self.base_url}/health"
         try:
-            async with httpx.AsyncClient(timeout=4.0) as client:
+            async with httpx.AsyncClient(timeout=10.0, verify=False) as client:
                 res = await client.get(url, headers=self._headers)
                 if res.status_code == 200:
                     return {
@@ -108,7 +108,7 @@ class FoodoscopeClient:
         params = {"title": query, "page": page, "limit": limit}
 
         try:
-            async with httpx.AsyncClient(timeout=6.0) as client:
+            async with httpx.AsyncClient(timeout=10.0, verify=False) as client:
                 res = await client.get(url, headers=self._headers, params=params)
                 if res.status_code == 200:
                     data = res.json()
@@ -126,7 +126,7 @@ class FoodoscopeClient:
         params = {"recipeId": recipe_id}
 
         try:
-            async with httpx.AsyncClient(timeout=6.0) as client:
+            async with httpx.AsyncClient(timeout=10.0, verify=False) as client:
                 res = await client.get(url, headers=self._headers, params=params)
                 if res.status_code == 200:
                     data = res.json()
@@ -156,7 +156,7 @@ class FoodoscopeClient:
             params["title"] = title
 
         try:
-            async with httpx.AsyncClient(timeout=6.0) as client:
+            async with httpx.AsyncClient(timeout=10.0, verify=False) as client:
                 res = await client.get(url, headers=self._headers, params=params)
                 if res.status_code == 200:
                     data = res.json()

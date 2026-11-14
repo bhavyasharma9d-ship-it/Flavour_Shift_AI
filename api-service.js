@@ -9,7 +9,7 @@ const ApiService = (function () {
   const STORAGE_TOKEN_KEY = 'flavorshift_foodoscope_key';
 
   const DEFAULT_FOODOSCOPE_URL = 'https://api.foodoscope.com';
-  const DEFAULT_FOODOSCOPE_KEY = 'XSHWtIa1UXATvKvsrWpZtgtPDWo6IaOsVKgBGSRPsdxewtur';
+  const DEFAULT_FOODOSCOPE_KEY = 'O3MVxj9stHg97e4nPBt2pICNFpumlyNrBv0BfqGkUVJsSgJy';
 
   let API_BASE_URL =
     window.FOODOSCOPE_API_URL ||
@@ -22,7 +22,7 @@ const ApiService = (function () {
     (function () {
       try {
         const t = localStorage.getItem(STORAGE_TOKEN_KEY);
-        if (t && t.startsWith('voGqE62')) {
+        if (!t || t.startsWith('voGqE62') || t.startsWith('XSHWtIa1')) {
           localStorage.setItem(STORAGE_TOKEN_KEY, DEFAULT_FOODOSCOPE_KEY);
           return DEFAULT_FOODOSCOPE_KEY;
         }
